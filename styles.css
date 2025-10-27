@@ -1,0 +1,141 @@
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --radius: 14px;
+  --pad: 1.25rem;
+}
+*
+{
+    box-sizing:border-box;
+    margin:0;
+    padding: 0;
+}
+body{
+  font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(#7e94dd, var(--bg));
+  color:var(--text);
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Card Contents*/
+.card{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  background:var(--card);
+  padding:var(--pad);
+  border-radius:var(--radius);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+  width: 70vw;
+}
+/* Image */
+.avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+}
+.name{
+  font-size:1.25rem;
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+.role{
+  color:var(--accent);
+  font-weight:600;
+}
+.bio{
+  margin:0.6rem 0 1rem 0;
+  color:var(--muted);
+  line-height:1.5;
+  font-size:0.97rem;
+}
+.info-list{
+  list-style:none;
+  margin:0 0 1rem 0;
+  display:grid;
+  gap:0.25rem;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+.info-list a{
+ color:inherit; 
+ text-decoration:none;
+ border-bottom:1px dashed transparent; 
+}
+.info-list a:hover{ 
+  color:var(--accent); 
+  border-bottom-color:rgba(37,99,235,0.25);
+ } 
+/*Social Media Links */
+.social{
+ display:flex;
+ gap:0.6rem; 
+ align-items:center;
+ margin-bottom:0.8rem; 
+}
+.social a{
+  width:40px;
+  height:40px;
+  text-decoration:none;
+  color:var(--text);
+  transition:transform .15s ease, background .15s ease;
+}
+.social a:hover{ 
+  transform:translateY(-4px); 
+  background:rgba(37,99,235,0.06);
+   color:var(--accent); }
+
+/* Download Button */
+.download{
+  display:inline-block;
+  padding:0.5rem 0.85rem;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.14);
+}
+.download:hover{ 
+transform:translateY(-3px); 
+}
+
+/* RESPONSIVE:’Mobile */
+@media (max-width:600px){
+  .card{ 
+  flex-direction:column;
+   text-align:center; 
+   padding:1rem; 
+   gap:0.9rem; 
+  }
+  .avatar{
+   width:96px; 
+   height:96px; 
+  }
+  .social{
+    justify-content: center;
+  }
+.card-content{ 
+  padding:0 0.2rem; 
+}
+}
+
+/* For Print */
+@media print{
+  body{ 
+  background:white; 
+}
+  .social, .download{ 
+  display:none; 
+  }
+  .card{ 
+  box-shadow:none; 
+  border:1px solid #eee; 
+}
+}
